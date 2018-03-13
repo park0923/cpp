@@ -1,0 +1,40 @@
+//1부터 100까지의 소수구하기
+#include <iostream>
+
+using namespace std;
+
+/*int main() {
+ int count = 0;
+ int line = 1;
+
+ for (int i = 2; i <= 100; i++) {
+  count = 0;
+  for (int k = 2; k <= i; k++) {
+   if (!(i%k)) {
+    count++;
+   }
+  }// k 반복문 끝
+  if (count == 1) {
+   cout << i << "\t";
+   line++;
+  }
+  if (line % 8 == 0) {
+   cout << endl;
+   line = 1;
+  }
+ }
+}*/
+
+//1 2+22+3 2+…+i 2 이 5000을 초과하는 가장 작은 i 와 그때의 합을 구하는 프로그램을 do - while 문을 이용하여 작성하라.
+
+int main() {
+ int sum = 0, num = 0, i = 1;
+
+ do {
+  num = i*i;
+  i++;
+  sum = sum + num;
+ } while (sum < 5000);
+
+ cout << sum << endl;
+} 
