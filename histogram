@@ -1,0 +1,84 @@
+#include <iostream>
+#include <time.h>
+#include <string>
+
+using namespace std;
+
+/*점수(0~100점 사이) 데이터의 분포를 5점 간격의 등급으로 히스토그
+램으로 표시하여라. 단, 1차원 배열을 사용하고, 점수는 키보드로부
+터 입력하고 ctrl-z가 입력되면 끝낸다. 히스토그램을 표시하기 위
+한 배열을 사용하고, 이 배열에는 누적수가 들어간다. 또한 100점은
+95~100사이에 포함하고, 59점 이하는 같은 것으로 취급한다*/
+
+/*int main() {
+ int num = 0, sum = 0;
+ int score[5] = { 0, };
+
+ srand((unsigned)time(NULL));
+
+ for (int i = 0; i < 10; i++) {
+  num = rand() % 101;
+  sum = num / 10;
+  if (sum < 6) {
+   score[0]++;
+  }
+  else if (sum == 5) {
+   score[4]++;
+  }
+  else {
+   score[sum-5]++;
+  }
+
+  std::cout << num << std::endl;
+ }
+
+ for (int j = 0; j < 5; j++) {
+  std::cout << "score" << j << ":" << score[j] << std::endl;
+ }
+
+ std::cout << "---------히스토그램----------" << std::endl;
+
+ for (int k = 0; k < 5; k++) {
+  std::cout << "score" << k << ":";
+  for (int q = 0; q < score[k]; q++) {
+   std::cout << "*";
+  }
+  std::cout << std::endl;
+ }
+ return 0;
+
+}*/
+
+//A~Z까지 나비모양으로 출력하기
+
+int main() {
+ int k = 49;
+ for (int i = 65; i < 91; i++) {
+  for (int j = 65; j <= i; j++) {
+   cout << (char)j;
+  }
+  for (int m = k; m >= 0; m--) {
+   cout << "~";
+  }
+  k = k - 2;
+
+  for (int l = i; l >= 65; l--) {
+   cout << (char)l;
+  }
+  cout << endl;
+ }
+ for (int i = 90; i > 64; i--) {
+  for (int j = 65; j <= i; j++) {
+   cout << (char)j;
+  }
+  for (int m = 0; m <= k; m++) {
+   cout << "~";
+  }
+  k = k + 2;
+  for (int l = i; l >= 65; l--) {
+   cout << (char)l;
+  }
+  cout << endl;
+ }
+
+} 
